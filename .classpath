@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-authentication/bonita-authentication-api/target/bonita-authentication-api-6.3.7.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-authentication/bonita-authentication-api/target/bonita-authentication-api-6.3.7-sources.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-session-accessor/bonita-session-accessor-read/target/bonita-session-accessor-read-6.3.7.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-session-accessor/bonita-session-accessor-read/target/bonita-session-accessor-read-6.3.7-sources.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-session-accessor/bonita-session-accessor-write/target/bonita-session-accessor-write-6.3.7.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-session-accessor/bonita-session-accessor-write/target/bonita-session-accessor-write-6.3.7-sources.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-log/bonita-log-technical-api/target/bonita-log-technical-api-6.3.7.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-log/bonita-log-technical-api/target/bonita-log-technical-api-6.3.7-sources.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-commons/target/bonita-commons-6.3.7.jar"/>
+	<classpathentry kind="lib" path="/home/centos/bonita-engine/services/bonita-commons/target/bonita-commons-6.3.7-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
