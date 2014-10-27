@@ -24,7 +24,7 @@ public class JAASAuthenticationService implements GenericAuthenticationService {
 	public JAASAuthenticationService(final TechnicalLoggerService logger, final SessionAccessor sessionAccessor) {
 		this.logger = logger;
 		this.sessionAccessor = sessionAccessor;
-		this.logger.log(this.getClass(), TechnicalLogSeverity.INFO, "Initialization");
+		this.logger.log(this.getClass(), TechnicalLogSeverity.DEBUG, "Initialization");
 	}
 	
 	@Override
@@ -56,7 +56,7 @@ public class JAASAuthenticationService implements GenericAuthenticationService {
 			
 			lc.login();
 			
-			logger.log(this.getClass(), TechnicalLogSeverity.INFO, "Auth success for user "+username);
+			logger.log(this.getClass(), TechnicalLogSeverity.DEBUG, "Auth success for user "+username);
 			return username;
 		}
 		catch (LoginException | STenantIdNotSetException e) {
