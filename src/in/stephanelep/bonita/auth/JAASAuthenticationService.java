@@ -20,25 +20,25 @@ import org.bonitasoft.engine.sessionaccessor.SessionAccessor;
 public class JAASAuthenticationService implements GenericAuthenticationService {
 	private TechnicalLoggerService logger;
 	private SessionAccessor sessionAccessor;
-	
+
 	public JAASAuthenticationService(final TechnicalLoggerService logger, final SessionAccessor sessionAccessor) {
 		this.logger = logger;
 		this.sessionAccessor = sessionAccessor;
 		this.logger.log(this.getClass(), TechnicalLogSeverity.DEBUG, "Initialization");
 	}
-	
+
 	@Override
 	public String checkUserCredentials(final Map<String, Serializable> credentials) throws AuthenticationException {
 		long tenantId;
 		LoginContext lc;
-		
+
 		final String authUsername = String.valueOf(credentials.get(AuthenticationConstants.BASIC_USERNAME));
 		final String authPassword = String.valueOf(credentials.get(AuthenticationConstants.BASIC_PASSWORD));
-		
+
 		String username = authUsername;
-		
+
 		try {
-			tenantId = this.sessionAccessor.getTenantId();			
+			tenantId = this.sessionAccessor.getTenantId();
 			lc = new LoginContext("BonitaAuthentication-"+tenantId, new CallbackHandler(){
 				public void handle(Callback[] callbacks) {
 					for(int i = 0; i < callbacks.length; i++) {
@@ -53,9 +53,9 @@ public class JAASAuthenticationService implements GenericAuthenticationService {
 					}
 				}
 			});
-			
+
 			lc.login();
-			
+
 			logger.log(this.getClass(), TechnicalLogSeverity.DEBUG, "Auth success for user "+username);
 			return username;
 		}
@@ -66,7 +66,7 @@ public class JAASAuthenticationService implements GenericAuthenticationService {
 		catch(Exception e) {
 			logger.log(this.getClass(), TechnicalLogSeverity.ERROR, "Unknown exception "+e.getClass().toString()+": "+e.getMessage());
 		}
-		
+
 		return null; 
 	}
 }
